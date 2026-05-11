@@ -91,10 +91,10 @@ export default function App() {
           <div className="bg-gray-50 rounded-2xl p-4 text-left space-y-3">
              <p className="text-xs font-black text-gray-400 uppercase tracking-widest">How to fix:</p>
              <ol className="text-sm text-gray-600 space-y-2 font-medium list-decimal list-inside">
-                <li>Go to the <span className="font-bold text-gray-900">Secrets panel</span> in AI Studio.</li>
-                <li>Add <code className="bg-gray-200 px-1.5 py-0.5 rounded text-red-600 font-bold">VITE_SUPABASE_URL</code></li>
-                <li>Add <code className="bg-gray-200 px-1.5 py-0.5 rounded text-red-600 font-bold">VITE_SUPABASE_ANON_KEY</code></li>
-                <li>Refresh this page.</li>
+                <li>Check <span className="font-bold text-gray-900">GitHub Actions</span> secrets if deployed on GitHub.</li>
+                <li>Ensure <code className="bg-gray-200 px-1.5 py-0.5 rounded text-red-600 font-bold">VITE_SUPABASE_URL</code> is set.</li>
+                <li>Ensure <code className="bg-gray-200 px-1.5 py-0.5 rounded text-red-600 font-bold">VITE_SUPABASE_ANON_KEY</code> is set.</li>
+                <li>Wait for the GitHub Action to finish building.</li>
              </ol>
           </div>
           <button 
