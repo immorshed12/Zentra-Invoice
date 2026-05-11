@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthStore } from './store/authStore';
 import { useTranslation } from 'react-i18next';
 import './i18n';
@@ -148,7 +148,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Toaster position="top-center" reverseOrder={false} />
-      <Router basename="/Zentra-Invoice/">
+      <Router>
       <Routes>
         <Route path="/" element={user ? <Navigate to="/dashboard" /> : <LandingPage />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
