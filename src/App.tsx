@@ -51,7 +51,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   }
 
   // Allow /onboarding if we are already there
-  const isAtOnboarding = window.location.pathname === '/onboarding';
+  const isAtOnboarding = window.location.pathname.includes('/onboarding');
 
   if (!profile || !profile.onboarding_completed) {
     if (isAtOnboarding) return <>{children}</>;
@@ -148,7 +148,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <Toaster position="top-center" reverseOrder={false} />
-      <Router>
+      <Router basename="/Zentra-Invoice/">
       <Routes>
         <Route path="/" element={user ? <Navigate to="/dashboard" /> : <LandingPage />} />
         <Route path="/login" element={!user ? <Login /> : <Navigate to="/dashboard" />} />
